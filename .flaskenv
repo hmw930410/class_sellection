@@ -1,1 +1,1 @@
-FLASK_APP=wtfisthis.py
+FLASK_APP=app.py

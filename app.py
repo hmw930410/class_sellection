@@ -2,7 +2,7 @@
 # coding=utf-8
 # -*- coding: UTF-8 -*-
 from flask import Flask, request, render_template, redirect ,url_for ,session
-import domi_classinfo
+import classinfo
 
 app = Flask(__name__)
 app.secret_key = 'show_key'  
@@ -15,9 +15,10 @@ def index():
     
 @app.route('/second')
 def rou_second():
-    a = domi_classinfo.list_all_grade(1)
-    b = domi_classinfo.list_all_grade(2)
-    return render_template('second.html', a = a , b = b)
+    a = classinfo.list_all_grade(1)
+    b = classinfo.list_all_grade(2)
+    return render_template('second.html', a=a, b=b, class_info=None)
+
 #腳本
 
 #這裡是要抓 你html 裡面action 裡面的東西

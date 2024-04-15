@@ -1,184 +1,84 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>選課系統</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <title>login</title>
+    <link rel="stylesheet" href="login_styles.css">
+
+    <script>
+        function show_hide() {
+            var login = document.getElementById("container1");
+            var signup = document.getElementById("container2");
+            var copyright = document.getElementById("copyright");
+
+            if (login.style.display === "none") {
+                login.style.display = "block";  //login出現
+                document.getElementById("username").value="";
+                document.getElementById("password").value="";
+                signup.style.display = "none";  //signup消失
+                copyright.style.margin = "200px 0px 0px 0px";
+            } else {
+                login.style.display = "none";   //login消失
+                signup.style.display = "block"; //signup出現
+                signup.style.visibility="visible";
+                copyright.style.margin = "200px 0px 0px 0px";
+
+                document.getElementById("username2").value="";
+                document.getElementById("password2").value="";
+                document.getElementById("usergrade").value="";
+                document.getElementById("userclass").value="";
+            }
+        }
+    </script>
+
 </head>
 <body>
-<div class="container">
-  <div class="schedule">
-    <h2>課表</h2>
-    <table id="schedule-table">
-      <thead>
-      <tr>
-        <th>時間</th>
-        <th>星期一</th>
-        <th>星期二</th>
-        <th>星期三</th>
-        <th>星期四</th>
-        <th>星期五</th>
-      </tr>
-      </thead>
-      <tbody>
-      <!-- 在這裡插入表格數據 -->
-      <tr>
-        <td>08:10 - 09:00</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>09:10 - 10:00</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>10:10 - 11:00</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>11:10 - 12:00</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>12:10 - 13:00</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>13:10 - 14:00</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>14:10 - 15:00</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>15:10 - 16:00</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>16:10 - 17:00</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>17:10 - 18:00</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>18:30 - 19:20</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>19:25 - 20:15</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>20:25 - 21:15</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>21:20 - 22:10</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <!-- 插入更多行 -->
-      </tbody>
-    </table>
-  </div>
+<div class="login_page">
+    <div id="container1">
 
-  <div class="selection">
-    <h2>下拉選單</h2>
-    <select>
-      <option value="系所">系所</option>
-      <option value="系所">資訊</option>
-      <!-- 插入更多選項 -->
-    </select>
-    <select>
-      <option value="班級">班級</option>
-      <option value="班級">一甲</option>
-      <option value="班級">一乙</option>
-      <option value="班級">一丙</option>
-      <option value="班級">二甲</option>
-      <option value="班級">二乙</option>
-      <option value="班級">二丙</option>
-      <option value="班級">二丁</option>
-      <option value="班級">三甲</option>
-      <option value="班級">三乙</option>
-      <option value="班級">三丙</option>
-      <option value="班級">三丁</option>
-      <option value="班級">四甲</option>
-      <option value="班級">四乙</option>
-      <option value="班級">四丙</option>
-      <option value="班級">四丁</option>
-      <!-- 插入更多選項 -->
-    </select>
-    <select>
-      <option value="課堂名稱">課堂名稱</option>
-      <!-- 插入更多選項 -->
-    </select>
-    <select>
-      <option value="時間">時間</option>
-      <!-- 插入更多選項 -->
-    </select>
-    <select>
-      <option value="課程代碼">課程代碼</option>
-      <!-- 插入更多選項 -->
-    </select>
-  </div>
-</div>
+        <div class="login">
+
+            <h3>登入 Login</h3>
+
+            <form action="/menuaaaaa">
+                <input type="text" id="username" name="username" placeholder="學號" required>
+                <div class="tab"></div>
+                <input type="text" id="password" name="password" placeholder="密碼" required>
+                <div class="tab"></div>
+                <input type="submit" value="登入" class="submit" onclick="location.href='course_schedule.html'">
+            </form>
+
+            <h5 onclick="show_hide()">註冊帳號</h5>
+
+        </div><!-- login end-->
+    </div><!-- container1 end-->
+</div><!-- login_page end-->
+
+<div class="signup_page" >
+    <div id="container2">
+
+        <div class="signup">
+
+            <h3>註冊 Sign Up</h3>
+
+            <form action="/menuaaaaa">
+                <input type="text" id="username2" name="SID" placeholder="學號" required>
+                <div class="tab"></div>
+                <input type="text" id="password2" name="password" placeholder="密碼" required>
+                <div class="tab"></div>
+                <input type="text" id="usergrade" name="grade" placeholder="年級" required>
+                <div class="tab"></div>
+                <input type="text" id="userclass" name="class" placeholder="班級" required>
+                <div class="tab"></div>
+                <input type="submit" value="註冊" class="submit" onclick="show_hide()">
+
+            </form>
+
+            <h5 onclick="show_hide()">登入帳號</h5>
+
+        </div><!-- signup end-->
+    </div><!-- container2 end-->
+</div><!-- signup_page end-->
+
 </body>
 </html>

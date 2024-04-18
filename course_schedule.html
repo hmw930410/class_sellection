@@ -8,6 +8,14 @@
 </head>
 <body>
 <div class="container">
+    <div class="student-info">
+        <!-- 學生登入後的資訊 -->
+        <p>學號: <span id="student-id">123456</span></p>
+        <p>姓名: <span id="student-name">王小明</span></p>
+        <p>科系: <span id="student-department">資訊工程</span></p>
+        <p>年級: <span id="student-grade">大三</span></p>
+        <p>班級: <span id="student-class">甲班</span></p>
+    </div>
     <div class="schedule">
         <h2>課表</h2>
         <table id="schedule-table">
@@ -24,7 +32,7 @@
             <tbody>
             <!-- 在這裡插入表格數據 -->
             <tr>
-                <td>08:10 - 09:00</td>
+                <td>1 08:10 - 09:00</td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -32,7 +40,7 @@
                 <td></td>
             </tr>
             <tr>
-                <td>09:10 - 10:00</td>
+                <td>2 09:10 - 10:00</td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -40,7 +48,7 @@
                 <td></td>
             </tr>
             <tr>
-                <td>10:10 - 11:00</td>
+                <td>3 10:10 - 11:00</td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -48,7 +56,7 @@
                 <td></td>
             </tr>
             <tr>
-                <td>11:10 - 12:00</td>
+                <td>4 11:10 - 12:00</td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -56,7 +64,7 @@
                 <td></td>
             </tr>
             <tr>
-                <td>12:10 - 13:00</td>
+                <td>5 12:10 - 13:00</td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -64,7 +72,7 @@
                 <td></td>
             </tr>
             <tr>
-                <td>13:10 - 14:00</td>
+                <td>6 13:10 - 14:00</td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -72,7 +80,7 @@
                 <td></td>
             </tr>
             <tr>
-                <td>14:10 - 15:00</td>
+                <td>7 14:10 - 15:00</td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -80,7 +88,7 @@
                 <td></td>
             </tr>
             <tr>
-                <td>15:10 - 16:00</td>
+                <td>8 15:10 - 16:00</td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -88,7 +96,7 @@
                 <td></td>
             </tr>
             <tr>
-                <td>16:10 - 17:00</td>
+                <td>9 16:10 - 17:00</td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -96,7 +104,7 @@
                 <td></td>
             </tr>
             <tr>
-                <td>17:10 - 18:00</td>
+                <td>10 17:10 - 18:00</td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -104,7 +112,7 @@
                 <td></td>
             </tr>
             <tr>
-                <td>18:30 - 19:20</td>
+                <td>11 18:30 - 19:20</td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -112,7 +120,7 @@
                 <td></td>
             </tr>
             <tr>
-                <td>19:25 - 20:15</td>
+                <td>12 19:25 - 20:15</td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -120,7 +128,7 @@
                 <td></td>
             </tr>
             <tr>
-                <td>20:25 - 21:15</td>
+                <td>13 20:25 - 21:15</td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -128,7 +136,7 @@
                 <td></td>
             </tr>
             <tr>
-                <td>21:20 - 22:10</td>
+                <td>14 21:20 - 22:10</td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -139,45 +147,59 @@
             </tbody>
         </table>
     </div>
+    <div class="course-selection">
+        <h2>選課清單</h2>
+        <ul id="course-list">
+            <!-- 在這裡插入勾選清單 -->
+            <li>
+                <input type="checkbox">
+                <label for="course1">選課代號</label>
+                <input type="text" id="course1" name="course">
+            </li>
+            <li>
+                <input type="checkbox">
+                <label for="teacher_name">開課教師姓名</label>
+                <input type="text" id="teacher_name" name="teacher">
+            </li>
+            <li>
+                <input type="checkbox" id="day" name="day" value="day">
+                <label for="day">星期
+                    <select name="day" id="day1">
+                        <option value="monday">一</option>
+                        <option value="tuesday">二</option>
+                        <option value="wednesday">三</option>
+                        <option value="thursday">四</option>
+                        <option value="friday">五</option>
+                    </select>
+                </label>
+                <label id="time" for="time">節次
+                    <select name="time" id="time1">
+                        <option value="time1">1</option>
+                        <option value="time2">2</option>
+                        <option value="time3">3</option>
+                        <option value="time4">4</option>
+                        <option value="time5">5</option>
+                        <option value="time6">6</option>
+                        <option value="time7">7</option>
+                        <option value="time8">8</option>
+                        <option value="time9">9</option>
+                        <option value="time10">10</option>
+                        <option value="time11">11</option>
+                        <option value="time12">12</option>
+                        <option value="time13">13</option>
+                        <option value="time14">14</option>
+                    </select>
+                </label>
+            </li>
+            <li>
+                <input type="checkbox">
+                <label for="class_name">科目名稱</label>
+                <input type="text" id="class_name" name="class_name">
 
-    <div class="selection">
-        <h2>下拉選單</h2>
-        <select>
-            <option value="系所">系所</option>
-            <option value="系所">資訊</option>
-            <!-- 插入更多選項 -->
-        </select>
-        <select>
-            <option value="班級">班級</option>
-            <option value="班級">一甲</option>
-            <option value="班級">一乙</option>
-            <option value="班級">一丙</option>
-            <option value="班級">二甲</option>
-            <option value="班級">二乙</option>
-            <option value="班級">二丙</option>
-            <option value="班級">二丁</option>
-            <option value="班級">三甲</option>
-            <option value="班級">三乙</option>
-            <option value="班級">三丙</option>
-            <option value="班級">三丁</option>
-            <option value="班級">四甲</option>
-            <option value="班級">四乙</option>
-            <option value="班級">四丙</option>
-            <option value="班級">四丁</option>
-            <!-- 插入更多選項 -->
-        </select>
-        <select>
-            <option value="課堂名稱">課堂名稱</option>
-            <!-- 插入更多選項 -->
-        </select>
-        <select>
-            <option value="時間">時間</option>
-            <!-- 插入更多選項 -->
-        </select>
-        <select>
-            <option value="課程代碼">課程代碼</option>
-            <!-- 插入更多選項 -->
-        </select>
+            </li>
+            <!-- 插入更多課程 -->
+        </ul>
+        <input type="submit" value="查詢" class="submit" onclick="location.href=''">
     </div>
 </div>
 </body>

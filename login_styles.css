@@ -7,7 +7,7 @@ body{
 }
 
 #username, #password, h3, #comfirm_password,
-#username2, #password2, #usergrade, #userclass{
+#username2, #password2, #department, #usergrade, #userclass{
     width: 200px;
     height: 20px;
     margin: 10px;

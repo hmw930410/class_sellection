@@ -1,5 +1,5 @@
 CREATE TABLE course (
-    course_ID VARCHAR PRIMARY KEY,
+    course_ID INT PRIMARY KEY,
     course_name VARCHAR (300),
     credits INT,
     need VARCHAR(300),

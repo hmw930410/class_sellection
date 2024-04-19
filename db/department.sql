@@ -1,6 +1,6 @@
 CREATE TABLE department(
     dept_ID INT PRIMARY KEY,
-    dept_name VARCHAR (300);
+    dept_name VARCHAR (300)
 );
 
 INSERT INTO department VALUES(1, '資訊工程系');

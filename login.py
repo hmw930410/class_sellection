@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect
 import MySQLdb
 
 login = Flask(__name__)
@@ -26,20 +26,22 @@ def login_action():
     cursor.execute("""
                    SELECT *
                    FROM student
-                   WHERE student_ID = "%s"
-                   AND PASSWORD = "%s"
+                   WHERE student_ID = %s
+                   AND PASSWORD = %s
                    """, (username, password))
     user = cursor.fetchone()
 
     if user:
-        return redirect(url_for('course_schedul.html'))
+        return render_template('course_schedule.html')
     else:
         return render_template('login.html', error="帳號或密碼錯誤")
 
 
-@login.route('/success')
+@login.route('/success', methods=['POST'])
 def success():
-    return "登入成功!"
+    go_login = request.form.get("inside")
+    if go_login:
+        return redirect('/course_schedule.html')
 
 
 if __name__ == '__main__':

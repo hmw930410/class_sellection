@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>login</title>
+    <link rel="stylesheet" href="login_styles.css" />
+
+    <script>
+      function show_hide() {
+        var login = document.getElementById("container1");
+        var signup = document.getElementById("container2");
+        var copyright = document.getElementById("copyright");
+
+        if (login.style.display === "none") {
+          login.style.display = "block"; //login出現
+          document.getElementById("username").value = "";
+          document.getElementById("password").value = "";
+          signup.style.display = "none"; //signup消失
+          copyright.style.margin = "200px 0px 0px 0px";
+        } else {
+          login.style.display = "none"; //login消失
+          signup.style.display = "block"; //signup出現
+          signup.style.visibility = "visible";
+          copyright.style.margin = "200px 0px 0px 0px";
+
+          document.getElementById("username2").value = "";
+          document.getElementById("password2").value = "";
+          document.getElementById("department").value = "";
+          document.getElementById("usergrade").value = "";
+          document.getElementById("userclass").value = "";
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div class="login_page">
+      <div id="container1">
+        <div class="login">
+          <h3>登入 Login</h3>
+
+          <form action="/login" method="post">
+            <input
+              type="text"
+              id="username"
+              name="username"
+              placeholder="學號"
+              required
+            />
+            <div class="tab"></div>
+            <input
+              type="text"
+              id="password"
+              name="password"
+              placeholder="密碼"
+              required
+            />
+            <div class="tab"></div>
+            <input
+              type="submit"
+              value="登入"
+              class="submit"
+              onclick="location.href='course_schedule.html'"
+            />
+          </form>
+
+          <h5 onclick="show_hide()">註冊帳號</h5>
+        </div>
+        <!-- login end-->
+      </div>
+      <!-- container1 end-->
+    </div>
+    <!-- login_page end-->
+
+    <div class="signup_page">
+      <div id="container2">
+        <div class="signup">
+          <h3>註冊 Sign Up</h3>
+
+          <form action="/login" method="post">
+            <input
+              type="text"
+              id="username2"
+              name="SID"
+              placeholder="學號"
+              required
+            />
+            <div class="tab"></div>
+            <input
+              type="text"
+              id="password2"
+              name="password"
+              placeholder="密碼"
+              required
+            />
+            <div class="tab"></div>
+            <input
+              type="text"
+              id="department"
+              name="department"
+              placeholder="科系"
+              required
+            />
+            <div class="tab"></div>
+            <input
+              type="text"
+              id="usergrade"
+              name="grade"
+              placeholder="年級"
+              required
+            />
+            <div class="tab"></div>
+            <input
+              type="text"
+              id="userclass"
+              name="class"
+              placeholder="班級"
+              required
+            />
+            <div class="tab"></div>
+            <input
+              type="submit"
+              value="註冊"
+              class="submit"
+              onclick="show_hide()"
+            />
+          </form>
+
+          <h5 onclick="show_hide()">登入帳號</h5>
+        </div>
+        <!-- signup end-->
+      </div>
+      <!-- container2 end-->
+    </div>
+    <!-- signup_page end-->
+  </body>
+</html>

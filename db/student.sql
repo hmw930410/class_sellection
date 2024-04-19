@@ -1,6 +1,6 @@
 CREATE TABLE student(
     student_ID VARCHAR (300),
-    PASSWOED VARCHAR(10),
+    PASSWORD VARCHAR(10),
     student_name VARCHAR (300),
     class_ID INT,
     total_credit INT,

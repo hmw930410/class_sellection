@@ -157,11 +157,12 @@
         </div>
         <div class="student-info">
           <!-- 學生登入後的資訊 -->
-          <p>學號: <span id="student-id">123456 要改</span></p>
-          <p>姓名: <span id="student-name">王小明 要改</span></p>
-          <p>科系: <span id="student-department">資訊工程 要改</span></p>
-          <p>年級: <span id="student-grade">大三 要改</span></p>
-          <p>班級: <span id="student-class">甲班 要改</span></p>
+          {% for s in students %}
+          <p>學號: {{s.student_ID}}</p>
+          <p>姓名: {{s.student_name}}</p>
+          <p>班級: {{s.classname}}</p>
+          <p>學分數: {{s.total_credit}}</p>
+          {% endfor %}
         </div>
       </div>
       <div class="right-container">

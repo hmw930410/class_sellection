@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for
 import MySQLdb
 
-app = Flask(__name__)
+login = Flask(__name__)
 
 # MySQL 連線設置
 db = MySQLdb.connect(host="127.0.0.1",
@@ -12,13 +12,13 @@ db = MySQLdb.connect(host="127.0.0.1",
 cursor = db.cursor()
 
 
-@app.route('/')  # 登入頁面
+@login.route('/')  # 登入頁面
 def login_page():
     return render_template('login.html')
 
 
-@app.route('/login', methods=['POST'])  # 登入驗證
-def login():
+@login.route('/login', methods=['POST'])  # 登入驗證
+def login_action():
     username = request.form['username']
     password = request.form['password']
 
@@ -37,10 +37,10 @@ def login():
         return render_template('login.html', error="帳號或密碼錯誤")
 
 
-@app.route('/success')
+@login.route('/success')
 def success():
     return "登入成功!"
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    login.run(debug=True)

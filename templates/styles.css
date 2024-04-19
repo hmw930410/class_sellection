@@ -8,6 +8,19 @@ body {
     justify-content: space-between;
     padding: 20px;
 }
+.left-container {
+    position: fixed;
+    left: 0;
+    width: 50%;
+    height: auto;
+}
+.right-container {
+    position: fixed;
+    right: 0;
+    width: 50%;
+    height: auto;
+}
+
 .schedule, .selection {
     width: 45%; /* Adjust width as needed */
 }
@@ -22,4 +35,15 @@ body {
 }
 #schedule-table th {
     background-color: #f2f2f2;
+}
+
+.course-selection {
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+.student-info {
+    position: fixed;
+    left: 0;
+    bottom: 0;
 }

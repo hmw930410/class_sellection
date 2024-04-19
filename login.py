@@ -14,7 +14,7 @@ cursor = db.cursor()
 
 @login.route('/')  # 登入頁面
 def login_page():
-    return render_template('login.html')
+    return render_template('index.html')
 
 
 @login.route('/login', methods=['POST'])  # 登入驗證
@@ -34,7 +34,7 @@ def login_action():
     if user:
         return render_template('course_schedule.html')
     else:
-        return render_template('login.html', error="帳號或密碼錯誤")
+        return render_template('index.html', error="帳號或密碼錯誤")
 
 
 @login.route('/success', methods=['POST'])

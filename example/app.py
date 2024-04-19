@@ -7,6 +7,7 @@ import classinfo
 app = Flask(__name__)
 app.secret_key = 'show_key'  
 
+
 #路由
 
 @app.route('/')

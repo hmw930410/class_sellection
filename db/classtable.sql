@@ -1,4 +1,4 @@
-CREATE classtable (
+CREATE TABLE classtable (
     student_ID INT,
     course_ID INT
 );

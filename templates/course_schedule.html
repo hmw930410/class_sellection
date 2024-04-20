@@ -86,66 +86,20 @@
             </thead>
             <tbody>
               <!-- 在這裡插入表格數據 -->
+              {% for c in cantables %} 
               <tr>
-                <td>1</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td>{{c[0]}}</td>
+                <td>{{c[1]}}</td>
+                <td>{{c[2]}}</td>
+                <td>{{c[3]}}</td>
+                <td>{{c[4]}}</td>
+                <td>{{c[5]}}</td>
+                <td>{{c[6]}}</td>
+                <td>{{c[7]}}</td>
+                <td>{{c[8]}}</td>
+                <td>{{c[9]}}</td>
               </tr>
-              <tr>
-                <td>2</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>4</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>5</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
+              {% endfor %}
             </tbody>
           </table>
           <input
@@ -172,19 +126,21 @@
             <thead>
               <th>課程代碼</th>
               <th>課程名稱</th>
+              <th>必選修</th>
               <th>上課時間</th>
               <th>授課教授</th>
               <th>教室</th>
             </thead>
             <tbody>
               <!-- 在這裡插入表格數據 -->
-              {% for t in tables %}
+              {% for t in hastables %}
               <tr>
                 <td>{{t[0]}}</td>
                 <td>{{t[1]}}</td>
                 <td>{{t[2]}}</td>
                 <td>{{t[3]}}</td>
                 <td>{{t[4]}}</td>
+                <td>{{t[5]}}</td>
               </tr>
               {% endfor %}
             </tbody>

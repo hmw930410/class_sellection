@@ -4,13 +4,13 @@ CREATE TABLE student(
     student_name VARCHAR (300),
     class_ID INT,
     total_credit INT,
-    table_ID int
+    table_ID int,
+    department_ID VARCHAR(30)
 );
 
 --                          ID     PW   Name class TC table
-INSERT INTO student VALUES ('1', '123', '小明', 2, 0, 1);  /* 正常 */
-INSERT INTO student VALUES ('2', '456', '小美', 3, 0, 2);  /* 別班 */
-INSERT INTO student VALUES ('3', '789', '小張', 2, 0, 3);  /* > 30 */
-INSERT INTO student VALUES ('4', '135', '小萱', 2, 0, 3);  /* < 9 */
+INSERT INTO student VALUES ('1', '123', '小明', 1, 0, 1, 1);
+INSERT INTO student VALUES ('2', '456', '小美', 2, 0, 2, 1); 
+INSERT INTO student VALUES ('3', '789', '小張', 3, 0, 3, 1);
 
 select * from student;

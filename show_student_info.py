@@ -11,7 +11,8 @@ def student_info(username):
         cursor = db.cursor()
 
         cursor.execute("""
-            SELECT student.student_ID, student.student_name, class_list.classname, student.total_credit
+            SELECT student.student_ID, student.student_name,
+                   class_list.classname, student.total_credit
             FROM student
             JOIN class_list ON student.class_ID = class_list.class_ID
             WHERE student.student_ID = %s

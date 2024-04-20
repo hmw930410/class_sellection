@@ -1,11 +1,7 @@
-from flask import render_template
-import show_student_info
+from flask import Flask, render_template, request, redirect, url_for, session
 import MySQLdb
-import renew_student_credits
-import insert_haschoose
 
-
-def addcourse(username):
+def Action(username):
 
     try:
         db = MySQLdb.connect(host="127.0.0.1",

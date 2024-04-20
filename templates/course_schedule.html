@@ -7,7 +7,7 @@
     <style>
       body {
         font-family: Arial, sans-serif;
-        margin: 0;
+        x: 0;
         padding: 0;
       }
       .container {
@@ -157,11 +157,11 @@
         </div>
         <div class="student-info">
           <!-- 學生登入後的資訊 -->
-          {% for s in students %}
-          <p>學號: {{s.student_ID}}</p>
-          <p>姓名: {{s.student_name}}</p>
-          <p>班級: {{s.classname}}</p>
-          <p>學分數: {{s.total_credit}}</p>
+          {% for student in students %} 
+          <p>學號: {{student[0]}}</p>
+          <p>姓名: {{student[1]}}</p>
+          <p>班級: {{student[2]}}</p>
+          <p>學分數: {{student[3]}}</p>
           {% endfor %}
         </div>
       </div>
@@ -178,13 +178,13 @@
             </thead>
             <tbody>
               <!-- 在這裡插入表格數據 -->
-              {% for c in courses %}
+              {% for t in tables %}
               <tr>
-                <td>{{c.course_ID}}</td>
-                <td>{{c.course_name}}</td>
-                <td>{{c.class_time}}</td>
-                <td>{{c.teacher}}</td>
-                <td>{{c.classroom}}</td>
+                <td>{{t[0]}}</td>
+                <td>{{t[1]}}</td>
+                <td>{{t[2]}}</td>
+                <td>{{t[3]}}</td>
+                <td>{{t[4]}}</td>
               </tr>
               {% endfor %}
             </tbody>

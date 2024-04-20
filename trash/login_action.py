@@ -21,9 +21,10 @@ def userLogin():
                     WHERE student_ID = %s
                     AND PASSWORD = %s
                     """, (username, password))
+        print ("user: ", username)
         user = cursor.fetchone()
-        print("User: ", user)
-        
+        return user
     except Exception as e:
         print("Error:", e)
         return None
+print(userLogin)

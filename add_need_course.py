@@ -1,3 +1,5 @@
+from flask import Flask, render_template
+import show_student_info
 import MySQLdb
 import renew_student_credits
 import insert_haschoose
@@ -23,8 +25,12 @@ def addcourse(username):
             AND open_class = (SELECT classname FROM class_list WHERE class_ID =
             %s) """, (class_ID,))
         table = cursor.fetchall()
-        update = insert_haschoose.haschoose(table, username)
-        return table
+        insert_haschoose.haschoose(table, username)
+        renew_student_credits.haschoose(username)
+        students = show_student_info.student_info(username)
+        return render_template(
+            'course_schedule.html',
+            students=students)
     except Exception as e:
         print("Error:", e)
         return None

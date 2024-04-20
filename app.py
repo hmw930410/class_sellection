@@ -12,8 +12,9 @@ def page():
 
 @app.route('/schedule', methods=['POST'])
 def studentInfo():
-    students = show_student_info.student_info(1)
-    tables = show_student_table.student_table(1)
+    nowstudent = 1
+    students = show_student_info.student_info(nowstudent)
+    tables = show_student_table.student_table(nowstudent)
     return render_template(
         'course_schedule.html',
         students=students,

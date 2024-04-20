@@ -20,7 +20,6 @@ def student_table(username):
             AND open_class = (SELECT classname FROM class_list WHERE class_ID = %s)
         """, (class_ID,))
         table = cursor.fetchall()
-        print(table)
         return table
     except Exception as e:
         print("Error:", e)

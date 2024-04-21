@@ -25,7 +25,7 @@ def loginAction():
             session['username'] = username
             return redirect('/schedule')
         else:
-            error = "Incorrect username/password"
+            error = "帳號或密碼錯誤"
             return render_template('index.html', error=error)
     else:
         return render_template('index.html')

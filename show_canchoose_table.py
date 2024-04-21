@@ -18,7 +18,9 @@ def canchoose(username):
                 SELECT classtable.course_ID
                 FROM classtable
                 WHERE classtable.student_ID = %s)
-            AND department_ID = (SELECT department_ID FROM student WHERE student_ID = %s)
+            AND department_ID = (SELECT department_ID
+                                 FROM student
+                                 WHERE student_ID = %s)
             AND course_name NOT IN (
                 SELECT course_name
                 FROM classtable

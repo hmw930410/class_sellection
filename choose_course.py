@@ -24,17 +24,17 @@ def choosecourse(username, courseid):
                        """, (username,))
         student_info = cursor.fetchall()
         cursor.execute("""SELECT COUNT(*)
-                  FROM classtable
-                  JOIN course ON classtable.course_ID = course.course_ID
-                  WHERE classtable.student_ID = %s AND course.course_name = %s
-               """, (username, course_name))
+                          FROM classtable
+                          JOIN course ON classtable.course_ID = course.course_ID
+                          WHERE classtable.student_ID = %s AND course.course_name = %s
+                       """, (username, course_name))
         ifchoose = cursor.fetchone()
         table_name = f"student{username}"
         print(course_info[0][6], course_info[0][7])
         for i in range(course_info[0][6], course_info[0][7] + 1):
             cursor.execute(f"""SELECT week, no{i}
-                              FROM {table_name}
-                              WHERE week = %s AND no{i} = 2
+                               FROM {table_name}
+                               WHERE week = %s AND no{i} = 2
                             """, (course_info[0][5],))
             hascourse = cursor.fetchall()
             if hascourse:
@@ -54,16 +54,16 @@ def choosecourse(username, courseid):
             error = "您加選後學分超過最高學分限制"
             return False, error
         else:
-            cursor.execute("""
-            SELECT course.course_ID, course.course_name, course.need,
-                   course.class_time, course.teacher, course.classroom
-            FROM course
-            WHERE course.course_ID = %s
-            """, (courseid,))
+            cursor.execute("""SELECT course.course_ID, course.course_name,
+                                     course.need,ourse.class_time,
+                                     course.teacher, course.classroom
+                              FROM course
+                              WHERE course.course_ID = %s
+                            """, (courseid,))
             table = cursor.fetchall()
             insert_haschoose.haschoose(table, username)
             renew_student_credits.haschoose(username)
             return True, None
     except Exception as e:
         print("Error:", e)
-        return False, "An error occurred while choosing the course."
+        return False, "Error."

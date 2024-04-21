@@ -43,19 +43,28 @@
       #course-list th {
         background-color: #f2f2f2;
       }
-
+      .student-info {
+        position: relative;
+        top: 0;
+      }
       .course-selection {
         position: relative;
       }
-      .student-info {
-        position: relative;
-        bottom: 0;
-      }
+      
     </style>
   </head>
   <body>
     <div class="container">
       <div class="left-container">
+        <div class="student-info">
+          <!-- 學生登入後的資訊 -->
+          {% for student in students %}
+          <p>學號: {{student[0]}}</p>
+          <p>姓名: {{student[1]}}</p>
+          <p>班級: {{student[2]}}</p>
+          <p>學分數: {{student[3]}}</p>
+          {% endfor %}
+        </div>
         <div class="course-selection">
           <h2>可選課程
             <form action="" method="post">
@@ -102,15 +111,7 @@
               {% endfor %}
             </tbody>
           </table>
-          <div class="student-info">
-            <!-- 學生登入後的資訊 -->
-            {% for student in students %} 
-            <p>學號: {{student[0]}}</p>
-            <p>姓名: {{student[1]}}</p>
-            <p>班級: {{student[2]}}</p>
-            <p>學分數: {{student[3]}}</p>
-            {% endfor %}
-          </div>
+
         </div>
       </div>
       <div class="right-container">

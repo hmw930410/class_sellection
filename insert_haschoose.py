@@ -20,6 +20,16 @@ def haschoose(table, username):
                 cursor.execute("""INSERT INTO classtable (student_ID,
                                   course_ID) VALUES (%s, %s)
                                """, (username, row[0]))
+                
+                cursor.execute("""SELECT week, begin_time, end_time
+                                  From course
+                                  WHERE course_ID = %s
+                               """, (course_ID,))
+                course_info = cursor.fetchone()
+                for i in range(course_info[1], course_info[2] + 1):
+                    table_name = f"student{username}"  # 使用 f-strings 動態生成表格名稱
+                    cursor.execute(f"""UPDATE {table_name} SET no{i} = 2
+                                       WHERE week = {course_info[0]}""")
 
         db.commit()
 

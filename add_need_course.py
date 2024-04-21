@@ -1,5 +1,3 @@
-from flask import render_template
-import show_student_info
 import MySQLdb
 import renew_student_credits
 import insert_haschoose
@@ -27,10 +25,7 @@ def addcourse(username):
         table = cursor.fetchall()
         insert_haschoose.haschoose(table, username)
         renew_student_credits.haschoose(username)
-        students = show_student_info.student_info(username)
-        return render_template(
-            'course_schedule.html',
-            students=students)
+        return True
     except Exception as e:
         print("Error:", e)
         return None

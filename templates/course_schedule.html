@@ -7,7 +7,7 @@
     <style>
       body {
         font-family: Arial, sans-serif;
-        x: 0;
+        margin: 0;
         padding: 0;
       }
       .container {
@@ -16,22 +16,16 @@
         padding: 20px;
       }
       .left-container {
-        position: fixed;
-        left: 15px;
-        top: 1px;
-        width: 58%;
+        position: relative;
+        width: 55%;
         height: auto;
       }
       .right-container {
-        position: fixed;
-        right: 15px;
-        top: 1px;
-        width: 42%;
+        position: relative;
+        width: 44%;
         height: auto;
       }
-      .schedule {
-        top: 1px;
-      }
+
       #schedule-table,
       #course-list {
         border-collapse: collapse;
@@ -51,14 +45,10 @@
       }
 
       .course-selection {
-        position: fixed;
-        left: 15px;
-        top: 1px;
+        position: relative;
       }
       .student-info {
-        position: fixed;
-        left: 15px;
-        top: 350px;
+        position: relative;
         bottom: 0;
       }
     </style>
@@ -68,6 +58,17 @@
       <div class="left-container">
         <div class="course-selection">
           <h2>可選課程</h2>
+
+          <form action="" method="post">
+            <input
+              type="text"
+              placeholder="選課代碼?"
+              required
+            />
+            <input type="submit" value="加選" class="submit" />
+            <input type="submit" value="退選" class="submit" />
+          </form>
+
           <table id="course-list">
             <!-- 可選課程 -->
             <thead>
@@ -108,15 +109,6 @@
             class="submit"
             onclick="location.href=''"
           />
-        </div>
-        <div class="student-info">
-          <!-- 學生登入後的資訊 -->
-          {% for student in students %} 
-          <p>學號: {{student[0]}}</p>
-          <p>姓名: {{student[1]}}</p>
-          <p>班級: {{student[2]}}</p>
-          <p>學分數: {{student[3]}}</p>
-          {% endfor %}
         </div>
       </div>
       <div class="right-container">

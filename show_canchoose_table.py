@@ -25,8 +25,8 @@ def canchoose(username):
                 SELECT course_name
                 FROM classtable
                 JOIN course ON classtable.course_ID = course.course_ID
-                WHERE classtable.student_ID = %s
-            );""", (username, username, username))
+                WHERE classtable.student_ID = %s);
+            """, (username, username, username))
         tables = cursor.fetchall()
         return tables
     except Exception as e:

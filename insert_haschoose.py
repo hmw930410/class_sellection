@@ -27,10 +27,9 @@ def haschoose(table, username):
                                """, (course_ID,))
                 course_info = cursor.fetchone()
                 for i in range(course_info[1], course_info[2] + 1):
-                    table_name = f"student{username}"  # 使用 f-strings 動態生成表格名稱
+                    table_name = f"student{username}"  # 使用 f-strings 生成表格名稱
                     cursor.execute(f"""UPDATE {table_name} SET no{i} = 2
                                        WHERE week = {course_info[0]}""")
-
         db.commit()
 
         return table

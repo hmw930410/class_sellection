@@ -30,7 +30,6 @@ def choosecourse(username, courseid):
                """, (username, course_name))
         ifchoose = cursor.fetchone()
         table_name = f"student{username}"
-        print(course_info[0][6], course_info[0][7])
         for i in range(course_info[0][6], course_info[0][7] + 1):
             cursor.execute(f"""SELECT week, no{i}
                                FROM {table_name}
@@ -54,9 +53,8 @@ def choosecourse(username, courseid):
             error = "您加選後學分超過最高學分限制"
             return False, error
         else:
-            
             cursor.execute("""SELECT course.course_ID, course.course_name,
-                                     course.need, course.class_time, 
+                                     course.need, course.class_time,
                                      course.teacher, course.classroom
                               FROM course
                               WHERE course.course_ID = %s

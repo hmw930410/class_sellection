@@ -30,6 +30,14 @@ def haschoose(table, username):
                     table_name = f"student{username}"  # 使用 f-strings 生成表格名稱
                     cursor.execute(f"""UPDATE {table_name} SET no{i} = 2
                                        WHERE week = {course_info[0]}""")
+                cursor.execute("""SELECT now_people
+                                  From course
+                                  WHERE course_ID = %s
+                               """, (course_ID,))
+                now_people = cursor.fetchone()[0] + 1
+                cursor.execute("""UPDATE course SET now_people = %s
+                                  WHERE course_ID = %s
+                              """, (now_people, course_ID, ))
         db.commit()
 
         return table

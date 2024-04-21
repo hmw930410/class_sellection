@@ -22,6 +22,14 @@ def deletechoose(username, courseid):
             table_name = f"student{username}"
             cursor.execute(f"""UPDATE {table_name} SET no{i} = 1
                                 WHERE week = {course_info[0]}""")
+        cursor.execute("""SELECT now_people
+                          From course
+                          WHERE course_ID = %s
+                        """, (courseid,))
+        now_people = cursor.fetchone()[0] - 1
+        cursor.execute("""UPDATE course SET now_people = %s
+                            WHERE course_ID = %s
+                        """, (now_people, courseid, ))
 
         db.commit()
     except Exception as e:

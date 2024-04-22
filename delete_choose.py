@@ -12,7 +12,7 @@ def deletechoose(username, courseid):
                           FROM classtable
                           WHERE course_ID = %s
                        """, (courseid,))
-        
+
         cursor.execute("""SELECT week, begin_time, end_time
                             From course
                             WHERE course_ID = %s

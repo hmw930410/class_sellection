@@ -43,7 +43,8 @@ def studentInfo():
         if request.method == 'POST':
             course_id = request.form['input_courseID']
             if 'add' in request.form:
-                success, error = choose_course.choosecourse(student_id, course_id)
+                success, error = choose_course.choosecourse(student_id,
+                                                            course_id)
                 if success:
                     return redirect(url_for('studentInfo'))
                 else:
